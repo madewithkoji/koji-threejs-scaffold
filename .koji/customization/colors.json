@@ -1,7 +1,7 @@
 {
   "colors": {
-    "backgroundColor": "#3f62ae",
-    "textColor": "#ffffff"
+    "backgroundColor": "#2c2f38",
+    "boxColor": "#1cd61c"
   },
   "@@editor": [
     {
@@ -11,14 +11,13 @@
       "source": "colors.json",
       "fields": [
         {
-          "key": "textColor",
-          "name": "Text color",
-          "description": "Default color for text",
+          "key": "backgroundColor",
+          "name": "Background color",
           "type": "color"
         },
         {
-          "key": "backgroundColor",
-          "name": "Background color",
+          "key": "boxColor",
+          "name": "Box color",
           "type": "color"
         }
       ]

@@ -1,26 +1,36 @@
-let img;
-let button;
+// An example three.js project, a spinning cube
 
-function setup() {
-  // make a full screen canvas
-  createCanvas(window.innerWidth, window.innerHeight);
-  img = loadImage(Koji.config.images.mouse); // Load the image
+// create our basic constructs
+var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 10000);
+var renderer = new THREE.WebGLRenderer();
 
-}
+// set the background color
+scene.background = new THREE.Color( Koji.config.colors.backgroundColor );
 
-function draw() {
-  // set the background color from the configuration options
-  background(Koji.config.colors.backgroundColor);
+// setup our renderer and add it to the DOM
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
 
-  // format our text
-  textSize(24);
-  fill(Koji.config.colors.textColor);
-  textAlign(CENTER);
+// create a cube with wireframing
+var geometry = new THREE.BoxGeometry(700, 700, 700, 10, 10, 10);
+var material = new THREE.MeshBasicMaterial({color: Koji.config.colors.boxColor, wireframe: true});
+var cube = new THREE.Mesh(geometry, material);
 
-  // print out our text
-  text(Koji.config.strings.content, window.innerWidth / 2, 100);
+// add our cube to the scene and initialize it
+scene.add(cube);
+camera.position.z = 1000;
 
-  // setup an image to follow our mouse
-  let imageSize = 100;
-  image(img, mouseX - (imageSize / 2), mouseY - (imageSize / 2), imageSize, imageSize);
-}
+// a basic render loop
+function render() {
+    // do this again next frame
+    requestAnimationFrame(render);
+
+    // rotate the cube a little bit
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+    renderer.render(scene, camera);
+};
+
+// call our render loop
+render();

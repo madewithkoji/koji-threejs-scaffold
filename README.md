@@ -1,9 +1,9 @@
-# Koji P5 Scaffold
+# Koji three.js Scaffold
 
-*A great starting point for any p5 project*
+*A great starting point for any three.js project*
 
 ## Getting Started
-Write your p5 code [here](#~/frontend/pages/HomePage/index.js).
+Write your three.js code [here](#~/frontend/app/index.js).
 
 ## Support and suggestions
 Please feel free to [contact me](https://gokoji.com/profile/jones) if you have any suggestions!   

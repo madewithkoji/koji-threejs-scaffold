@@ -18,7 +18,6 @@ Koji.pageLoad();
 window.Koji = Koji;
 
 require('script-loader!app/index.js');
-new p5();
 
 if (module.hot) {
     module.hot.accept('script-loader!app/index.js', () => {
@@ -26,6 +25,5 @@ if (module.hot) {
         oldCanvas.parentNode.removeChild(oldCanvas);
 
         require('script-loader!app/index.js');
-        new p5();
     });
 }
